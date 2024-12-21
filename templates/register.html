@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+<div class="row">
+  <div class="card">
+    <div class="card-body">
+        {% if breed %}
+          <p>The Breed is {{breed}}</p>
+      {%else%}
+        <p>Please enter your breed</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<form method="POST">
+    <div class="mb-3">
+   {{form.hidden_tag()}}
+    {{form.breed.label(class='form-label')}} {{form.breed(class='form-control')}}
+    {{form.submit(class='btn btn-primary')}}
+    </div>
+</form>
+{% endblock %}

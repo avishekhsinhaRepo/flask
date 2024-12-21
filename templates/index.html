@@ -1,0 +1,55 @@
+{%extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{url_for('static', filename='img/img_1.jpg')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename='img/img_2.jpg')}}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename='img/img_3.jpg')}}" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+<div class="row">
+  <div class="alert alert-primary" role="alert">
+ <ul>
+    <li>Must have uppercase</li>
+    <li>Must have lowercase</li>
+    <li>Ends with number</li>
+ </ul>
+</div>
+  <form action="{{url_for('thankyou')}}">
+     <div class="mb-3">
+        <label for="user_name" class="form-label">User Name</label>
+        <input type="text" class="form-control" id="user_name" aria-describedby="emailHelp" name="user_name">
+
+      </div>
+      <div class="mb-3">
+        <label for="first_name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="first_name" aria-describedby="emailHelp" name="first_name">
+
+      </div>
+      <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name="last_name">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+{% endblock %}
